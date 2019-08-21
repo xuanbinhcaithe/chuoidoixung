@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>[*Bài tập] Kiểm tra từ đối xứng</title>
+</head>
+
+<body>
+    <label for="inputValue"> CHỌN TỪ CẦN KIỂM TRA :</label>
+    <input type="text" id="inputValue">
+    <input type="button" value="check" onclick="checking()">
+    <p id="result" ></p>
+
+
+    <script>
+        let hienThi=document.getElementById('result');
+        function checking() {
+            let str=document.getElementById("inputValue").value;
+            let doDai=str.length-1;
+            let result=true;
+            let i=0;
+            while (i<doDai) {
+                if (str[i] == str[doDai]) {
+                    i++;
+                    doDai--;
+                } else {
+                    result = false;
+                    break;
+
+                }
+            }
+            if (result) {
+                hienThi.innerText='chuỗi trên là chuỗi đỗi xứng';
+            }else {
+                hienThi.innerHTML='chuoi trên không là chuỗi đỗi xứng';
+            }
+         }
+    </script>
+</body>
+
+</html>
